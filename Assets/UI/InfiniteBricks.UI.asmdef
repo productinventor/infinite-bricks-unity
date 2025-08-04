@@ -1,0 +1,17 @@
+{
+    "name": "InfiniteBricks.UI",
+    "rootNamespace": "InfiniteBricks.UI",
+    "references": [
+        "InfiniteBricks.Core",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
