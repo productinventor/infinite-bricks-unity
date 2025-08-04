@@ -35,12 +35,34 @@ namespace InfiniteBricks.Core
         
         private void Start()
         {
+            Debug.Log("FPSDisplay Start() called");
+            
+            // Try to find TextMeshProUGUI
             fpsText = GetComponent<TextMeshProUGUI>();
-            if (fpsText == null)
+            if (fpsText != null)
             {
-                Debug.LogError("FPSDisplay requires a TextMeshProUGUI component!");
-                enabled = false;
+                Debug.Log("TextMeshProUGUI found successfully!");
+                return;
             }
+            
+            // If not found, try the world space version
+            var worldTextMesh = GetComponent<TextMeshPro>();
+            if (worldTextMesh != null)
+            {
+                Debug.LogError("Found TextMeshPro (world space) instead of TextMeshProUGUI (UI). Please use UI Text.");
+                enabled = false;
+                return;
+            }
+            
+            // Debug all components
+            Debug.Log("No TextMeshPro components found. All components:");
+            foreach (Component comp in GetComponents<Component>())
+            {
+                Debug.Log($"  - {comp.GetType().FullName}");
+            }
+            
+            Debug.LogError("FPSDisplay requires a TextMeshProUGUI component!");
+            enabled = false;
         }
         
         private void Update()

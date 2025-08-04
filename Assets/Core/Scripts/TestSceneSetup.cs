@@ -1,5 +1,4 @@
 using UnityEngine;
-using InfiniteBricks.UI;
 
 namespace InfiniteBricks.Core
 {
@@ -62,8 +61,8 @@ namespace InfiniteBricks.Core
         
         private void CreateUIManager()
         {
-            GameObject uiManagerObj = new GameObject("UI Manager");
-            uiManagerObj.AddComponent<UIManager>();
+            // UI Manager temporarily disabled due to assembly dependency issues
+            Debug.Log("UI Manager creation skipped - use FPSDisplay directly on TextMeshPro component");
         }
         
         private void SetupCamera()
